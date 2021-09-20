@@ -1,15 +1,7 @@
-class Item {
-  purchase: string;
-  done: boolean;
-  price: number;
+import {Injectable} from '@angular/core';
+import {Item} from './item.service';
 
-  constructor(purchase: string, price: number) {
-    this.purchase = purchase;
-    this.price = price;
-    this.done = false;
-  }
-}
-
+@Injectable()
 export class DataService{
 
   items: Item[]=

@@ -1,17 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Injectable} from '@angular/core';
 import {DataService} from './data.service';
-
-class Item {
-  purchase: string;
-  done: boolean;
-  price: number;
-
-  constructor(purchase: string, price: number) {
-    this.purchase = purchase;
-    this.price = price;
-    this.done = false;
-  }
-}
+import {Item} from './item.service';
 
 @Component({
   selector: 'purchase-app',
@@ -19,6 +8,7 @@ class Item {
   providers: [DataService]
 })
 
+@Injectable()
 export class AppComponent {
   text: string = "";
   price: number = 0;
