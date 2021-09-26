@@ -1,23 +1,20 @@
 <div class="page-header">
   <child-comp></child-comp>
 </div>
-<div class="panel">
-  <div class="form-inline">
-    <div class="form-group">
-      <div class="col-md-8">
-        <input bold class="form-control" [(ngModel)]="text" placeholder = "Название" />
-      </div>
+<div>
+  <div class="form-group">
+    <input bold class="form-control" name="name"
+           [(ngModel)]="text" #name="ngModel" required="" placeholder = "Название" />
+    <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+      Не указано название
     </div>
-    <div class="form-group">
-      <div class="col-md-6">
-        <input bold type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-md-offset-2 col-md-8">
-        <button bold class="btn btn-default" (click)="addItem(text, price)">Добавить</button>
-      </div>
-    </div>
+  </div>
+  <div class="form-group">
+    <input bold type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
+  </div>
+  <div class="form-group">
+    <button [disabled]="name.invalid"
+            bold class="btn btn-default" (click)="addItem(text, price)">Добавить</button>
   </div>
   <table class="table table-striped">
     <thead>

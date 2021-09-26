@@ -5,6 +5,10 @@ import {Item} from './item.service';
 @Component({
   selector: 'purchase-app',
   templateUrl: './app.component.html',
+  styles: [`
+        input.ng-touched.ng-invalid {border:solid red 2px;}
+        input.ng-touched.ng-valid {border:solid green 2px;}
+    `],
   providers: [DataService]
 })
 
